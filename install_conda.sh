@@ -50,15 +50,16 @@ if [[ $_ostype == 'Linux' ]]; then
     /usr/bin/bash Miniconda3-py37_4.11.0-Linux-x86_64.sh
     _shell=$(echo $SHELL | cut -d'/' -f3)
     if [[ $_shell == 'zsh' ]]; then
-        source ~/.zshrc
+        . ~/.zshrc
     elif [[ $_shell == 'bash' ]]; then
-        source ~/.bashrc
+        . ~/.bashrc
     fi
-    conda create --name $USER
-    conda activate $USER
+    # conda create --name $USER
+    # conda activate $USER
 fi
 
 printf "\e[1;32mPlease Run this commands (CHANGE \$USER BY YOUR NICKNAME):\n\e[0m"
-printf "\e[1;32m 1. conda create --name \$USER\n\e[0m"
-printf "\e[1;32m 2. conda activate \$USER\n\e[0m"
-printf "\e[1;32m 2. echo \"y\" | conda install requests\n\e[0m"
+printf "\e[1;32m 1. conda init $SHELL\n\e[0m"
+printf "\e[1;32m 2. conda create --name \$USER\n\e[0m"
+printf "\e[1;32m 3. conda activate \$USER\n\e[0m"
+printf "\e[1;32m 4. echo \"y\" | conda install requests\n\e[0m"
